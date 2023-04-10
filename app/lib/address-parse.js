@@ -488,7 +488,7 @@ const filterPhone = (address) => {
     address = address.replace(/(\d{4})/g, '$1')
     console.log(address, 'node')
 
-    const mobileReg = /((\d{11}(\-\d{4}|\d{3})?)|^((\d{7,8})|(\d{4}|\d{3})-(\d{7,8})|(\d{4}|\d{3})-(\d{7,8})-(\d{4}|\d{3}|\d{2}|\d{1})|(\d{7,8})-(\d{4}|\d{3}|\d{2}|\d{1}))$)/g
+    const mobileReg = /((13[0-9]|14[01456879]|15[0-35-9]|16[2567]|17[0-8]|18[0-9]|19[0-35-9])\d{8}|^((\d{7,8})|(\d{4}|\d{3})-(\d{7,8})|(\d{4}|\d{3})-(\d{7,8})-(\d{4}|\d{3}|\d{2}|\d{1})|(\d{7,8})-(\d{4}|\d{3}|\d{2}|\d{1}))$)(\-(\d{4}|\d{3}))?/g
     const mobile = mobileReg.exec(address)
     if (mobile) {
         phone = mobile[0]
